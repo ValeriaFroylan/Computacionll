@@ -1,0 +1,26 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc= new Scanner(System.in);
+		String oracion;
+		oracion = sc.nextLine();
+		int A= 65;
+		int Z= 90;
+		int contador=1;
+		for(int i=0; i<=oracion.length()-1; i++){
+			if(oracion.charAt(i)<= Z && (oracion.charAt(i))>=A ){
+			 contador++;
+			}	
+		}
+		System.out.println(contador);
+        
+		
+	
+    }
+}
