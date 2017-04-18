@@ -1,0 +1,29 @@
+
+import java.util.Scanner;
+
+public class Solution {
+	public static void main(String[]args){
+		Scanner sc= new Scanner(System.in);
+		int tamaño= Integer.parseInt(sc.nextLine());
+		String a= sc.nextLine();
+		int a1= Integer.parseInt(sc.nextLine());
+		a1= a1%26;
+		System.out.println(encrypt(a, tamaño,a1));
+		sc.close();
+		}
+		private static String encrypt(String a, int tamaño, int shift){
+			StringBuilder aBuilder= new StringBuilder();
+			char a2;
+			for(int i=0; i<tamaño;i++){
+				a2= a.charAt(i);
+				if(Character.isLetter(a2)){
+					a2= (char)(a.charAt(i)+shift);
+				if((Character.isLowerCase(a.charAt(i))&& a2>'z')||
+						(Character.isUpperCase(a.charAt(i)) && a2>'Z'))
+					a2= (char)(a.charAt(i)-(26-shift));}
+			aBuilder.append(a2);
+			}
+			return aBuilder.toString();
+}
+			
+		}
