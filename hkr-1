@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+   	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		int	ma[][]= new int[6][6];
+		for(int ma_i=0; ma_i<6; ma_i++){
+			for(int ma_j=0; ma_j<6; ma_j++){
+				ma[ma_i][ma_j]= sc.nextInt();
+			}}
+		int total= 0;
+		int ultimo=-100;
+		for(int i=1; i<ma.length-1; i++ ){
+			for(int j=1;j<ma.length-1;j++){
+				total= ma[i][j]+ma[i-1][j-1]+ma[i-1][j]+ma[i-1][j+1]+ma[i+1][j-1]+ma[i+1][j]+ma[i+1][j+1];
+				if(total>ultimo){
+					ultimo=total;
+				}
+			}
+			
+		}
+		System.out.println(ultimo);
+	}
+
+}
