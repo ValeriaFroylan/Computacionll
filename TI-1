@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="jquery-3.2.0.min.js"></script>
+	<Title> 
+	¿Como hacen las empresas de redes socilaes para ganar dinero?
+	</title>
+</head>
+	<body background="fondo1.jpg">
+		<H1> 
+		<font face="Comic Sans Mc" color="#A9D0F5" size="6"> <CENTER>
+		¿Cómo ganan dinero las empresas de redes sociales?</CENTER></font>
+		</h1>
+	<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2"></div>
+	<div class="col-md-3"></div>
+	<img src="imagen2.jpg">
+	<div class="col-mod-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-6">
+	<font face="Comic Sans Mc" color="#A9D0F5" size="2"> 
+	Pero, ¿de dónde saca el dinero si no cobran nada? La respuesta se halla en los fondos de inversión, compañías que con el dinero de sus clientes lo invierten en otras empresas en auge. Cuando esas empresas son vendidas o generan beneficios, los inversores se llevan la parte correspondiente a lo que hayan invertido. Whatsapp gana más dinero cuantos más inversores tenga, y los inversores ganan dinero cuanto más famoso sea el servicio, en este caso, cuantos más usuarios tenga Whatsapp. Aunque esto no deja de ser una inversión. Otra ventaja que tiene Whatsapp es que sus gastos son pocos, ya que además de los servidores hay que pagar a muy pocos trabajadores. Los fondos de  inversión quieren a WhatsApp por que se ha convertido en una necesidad para la gente. Cualquier empresa querría un servicio así. Imaginad cuánto dinero podrían conseguir si insertaran, por ejemplo, publicidad.
+</font></div>
+
+	<div class="col-md-1">
+	<font face="Agency FB" size="2" color="#A9D0F5"><a href="#http://omicrono.elespanol.com/2012/01/como-gana-dinero-whatsapp/">
+	http://omicrono.elespanol.com/2012/01/como-gana-dinero-whatsapp/</a>
+
+	</font>
+	</div>
+</div>
+	<script src="js/bootstrap.min.js"></script>
+	</body>
+</html>
