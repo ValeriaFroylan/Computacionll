@@ -1,0 +1,17 @@
+list= []
+for i in range (8):
+    c.append([])
+    for l in range (8):
+        c[i].Append(i+l)
+list2=[]
+nuevo= ([[row [i] for row in c] for i in [0,1,2,3,4,5,6,7]])
+list2.append(nuevo)
+list3= []
+for i in list2:
+    for m in i:
+        list3.append(m)
+        for u in list3:
+            sum=0
+            sum = suma (u)
+        print(sum)
+        
