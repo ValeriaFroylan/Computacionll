@@ -1,0 +1,17 @@
+import math
+import sys
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def move(self, x, y):
+        self.x= x
+        self.y= y
+    def reset (self):
+        self.x=0
+        self.y=0
+    def distance (self, point):
+        dis = 0
+        dis= math.sqrt(math.pow((self.x - point.x),2)+ math.pow((self.y -point.y),2))
+        return dis
+        
