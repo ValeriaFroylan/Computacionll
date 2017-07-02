@@ -1,0 +1,9 @@
+import math
+import sys
+
+a1= int(raw_input())
+a2= int(raw_input())
+op=int(math.pow(a1,(1/float(a2))))
+op2= [math.pow(i,a2) for i in range (op+1)]
+resultado= int(sum(op2)/a1)
+print resultado 
