@@ -1,1 +1,72 @@
 
+from stack import *
+from calculadora_polaca import *
+a = []
+es= ''
+to= ''
+da= ''
+res=''
+def verificaParentesis(symbolString):
+    s = Stack()
+    balanced = True
+    index = 0
+    while index < len(symbolString) and balanced:
+        symbol = symbolString[index]
+        if symbol == "(":
+            s.push(symbol)
+        elif symbol == "+"or "-" or "/" or "*" or "%":
+            a.append(symbol)
+        else:
+            if s.isEmpty():
+                balanced = False
+            else:
+                s.pop()
+        index = index + 1
+
+    if balanced and s.isEmpty():
+         primero= str(symbolString).replace('(',' ')
+         segundo = str(primero).replace(')',' ')
+         tercero = segundo.split()
+         return True
+    else:
+        return False
+operacion= raw_input("¿Que operación desea hacer?")
+cuenta = "(((22*7)+(3/1)-(2+2))"
+if verificaParentesis(operacion) == True:
+    ja = 0
+    for i in range(len(a)):
+        a2 = a[i]
+        if es.match("[0-9]",a2):
+            es +=a2
+            if i+1 < len(a):
+                a3 = a[i+1]
+                if not es.match("[0-9]",a3):
+                    to += es +" "
+                    es = ''
+                    ja += 1
+                    if ja == 2:
+                        to += da + " " + res + " "
+                        print to
+                        ja =0
+            else:
+                to += es +" "
+                es = ''
+                ja += 1
+                if ja == 2:
+                    to += da +" "+ res +" "
+                    print to
+                    ja =0
+                    da = ''
+                    res = ''
+        else:
+            if da == '':
+                da = a2
+                print da
+            else:
+                res= a2
+                da = ''
+                return res
+    resul = str(to).split()
+    calculadora_polaca(resul)
+else: 
+    print("Error de sintaxis")
