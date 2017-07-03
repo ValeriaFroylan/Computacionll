@@ -1,1 +1,390 @@
+#banco
+import Stack
+class Banco:
+    def __init__(self):
+        self.s1 = Stack()
+    def __str__(self):
+        return self.s1.items
+    def list(self):
+        return self.s1.list()
+    def saldo(self, cuenta):
+        list = self.list()
+        saldofinal = 0
+        for i in list:
+            if list[i].cuenta == cuenta:
+                if list[i].tipo in "primer tipo":
+                    saldofinal += list[i].saldo
+                if list[i].tipo == "segundo tipo":
+                    saldofinal -= list[i].saldo
+            return saldofinal
+    def depo(self, primero, segundo):
+        list = self.list()
+        depo = 0
+        a1 = 0
+        for i in list:
+            if list[i].tipo in "primer tipo" and list[i].fecha >= primero and list[i].fecha <= segundo:
+                a1 += 1
+                depo += list[i].saldo
+        return "Cantidad de depositos: " + a1 + "Cantidad: " + depo
+    def retiros(self, primero, segundo):
+        list = self.list()
+        retiros = 0
+        a1 = 0
+        for i in list:
+            if list[i].tipo in "segundo tipo" and list[i].fecha >= primero and list[i].fecha <= segundo:
+                a1 += 1
+                retiros -= list[i].saldo
+        return "Cantidad de retiros: ",a1,"Cantidad: ",retiros
+    def move(self, movimiento):
+        self.s1.push(movimiento)
+    def a2Stack(self, list):
+        if not self.s1.isEmpty():
+            self.s1.items = []
+        for i in list:
+                self.s1.push(list[i])
+class Movimiento:
+    def __init__(self, id, cuenta, fecha, saldo, tipo):
+        self.id = id
+        self.cuenta = cuenta
+        self. fecha = fecha
+        self.saldo = saldo
+        self.tipo = tipo
+    def SetId(self, id):
+        self.id = id
+    def GetId(self):
+        return self.id
+    def setCuenta(self, cuenta):
+        self.cuenta = cuenta
+    def getCuenta(self):
+        return self.id
+    def setFecha(self, fecha):
+        self.fecha = fecha
+    def getFecha(self):
+        return self.fecha
+    def setSaldo(self, saldo):
+        self.saldo = saldo
+    def getSaldo(self):
+        return self.saldo
+    def setTipo(self, tipo):
+        self.tipo = tipo
+    def getTipo(self):
+        return self.tipo
+    def __str__(self):
+        informacion = "Id: " + self.id + ", Fecha: " + self.fecha + ", saldo: " + self.saldo + ", Tipo: " + self.tipo
+        return informacion
+    def Entero():
+        while True:
+            try:
+                numero = int(raw_input())
+            pass
+        return numero
+    def Flotante():
+        while True:
+            try:
+                numero = float(raw_input())
+            pass
+        return numero
+    def Char():
+        while True:
+            try:
+                numero =char( raw_input())
+            pass
+        return numero[0]
+    def Cadena():
+        while True:
+            try:
+                numero = input()
+            pass
+        return numero
+class Main:
+    def main():
+        contador = True
+        banco = Banco()
+        while contador:
+            inicio = "1.-Agregar Movimiento\a1"
+            inicio += "2.-Saldo de cuenta\a1"
+            inicio += "3.-Depositos\a1"
+            inicio += "4.-Retiros\a1"
+            inicio += "5.-Salir\a1"
+            respuesta = Entero("Digite su respuesta\a1")
+            if respueta == 1:
+                id = Entero("Digite el id")
+                cuenta = Entero("Digite el Numero de cuneta")
+                fecha = Entero("Digite la fecha")
+                saldo = Entero("Digite ls cantidad de dinero")
+                tipo = Char("Digite el tipo de cuenta")
+                movimiento = Movimiento(id, cuenta, fecha, saldo, tipo)
+                banco.move(movimiento)
+            if respuesta == 2:
+                a2Cuenta = Entero("digite un numero de cuenta")
+                print banco.saldo(a2Cuenta)
+            if respuesta == 3:
+                primero = Entero("Diga maxima fecha")
+                segundo = Entero("Diga minima fecha")
+                if segundo < primero :
+                    print "No hay resultado para esta busqueda"
+                else:
+                    print banco.retiros(primero, segundo)
+            if respuesta == 4:
+                primero = Entero("Diga maxima fecha")
+                segundo = Entero("Diga maxima fecha")
+                if segundo < primero :
+                    print "No hay resultado para esta busqueda"
+                else:
+                    print banco.depo(primero, segundo)
+            if respuesta == 5:
+                contador = False
+ #Empleados
+ from Stack import Stack
+class Empleado:
+    def __init__(self, numberemplo):
+        Tareas = Stack()
+        self.numberemplo = 0
+        self.Tareas = Tareas
+        self.NumTareas = len(self.Tareas)
+    def __init__(self, numberemplo, Tareas):
+        self.numberemplo = 0
+        self.Tareas = Tareas
+        self.NumTareas = len(self.Tareas)
+    def setnumberemplo(self, codigo):
+        self.numberemplo= numberemplo
+    def getnumberemplo(self):
+        return self.numberemplo
+    def setTareas(self, tareas):
+        self.Tareas = tareas
+    def getTareas(self):
+        return self.Tareas
+    def getNumTareas(self):
+        return self.Tareas
+    def tarea2(self):
+        self.Tareas.pop()
+class Emplea2:
+    def __init__(self):
+        self.s = Stack()
+    def addEmpleado(self, empleado):
+        self.s.push(empleado)
+    def addTarea(self, tarea):
+        primero = 0
+        ya = 0
+        list = self.t.list()
+        for i in list:
+            if list[i].NumTareas < primero:
+                ya = i
+                menos = list[i].NumTareas
+        list[ya].Tareas.push(tarea)
+        if not self.s.isEmpty():
+            self.s.items = []
+        for i in list:
+            self.s.push(list[i])
+    def list(self):
+        return list(self.s.items)
+    def see(self, empleado):
+        list = self.list
+        found= False
+        for i in list:
+            if list[i].numberemplo == empleado:
+                found = True
+        return found
+    def tarea2(self, empleado):
+        list = self.list()
+        for i in list:
+            if list[i].numberemplo == empleado:
+                list[i].Tareas.pop()
+                break
+class Tarea:
+    def __init__(self, area, info):
+        self.area = area
+        self.info = info
+    def __str__(self):
+        return "Area: " + self.area + "Descripcion: " + self.info
+    def setarea(self, area):
+        self.area = area
+    def getarea(self):
+        return self.area
+    def setinfo(self, info):
+        self.info = info
+        def getinfo(self):
+            return self.info
+class Tareas:
+    def __init__(self):
+        s = Stack()
+    def __init__(self, tareas):
+        self.s = tareas
+    def addTarea(self, tarea):
+        self.s.push(tarea)
+    def elTarea(self):
+        return self.s.pop()
+    def Entero():
+        while True:
+            try:
+                numero = int(raw_input())
+            pass
+        return numero
+    def Flotante():
+        while True:
+            try:
+                numero = float(raw_input())
+            pass
+        return numero
+    def Char():
+        while True:
+            try:
+                numero =char( raw_input())
+            pass
+        return numero[0]
+    def Cadena():
+        while True:
+            try:
+                numero = input()
+            pass
+        return numero
+class Main:
+    def main()
+        contador= True
+        empleados = Empleados()
+        while contador:
+            inico = "1.-Agregar empleado "
+            inicio+= "2.-Agregar tarea"
+            inicio += "3.-Tarea finalizada"
+            inicio += "4.-Salir"
+            respueta = Entero(inico)
+            if respuesta == 1:
+                numberemplo = Entero("Numero de empleado:")
+                empleados.push(Empleado(numberemplo))
+            elif respueta == 2:
+                area = Cadena("Area del empleado:")
+                info = Cadena("Descripcion: ")
+                tarea = Tarea(area, info)
+                empleados.addTarea(tarea)
+            elif respuesta == 3:
+                empleado = Cadena("empleado")
+                if empleados.found(empleado):
+                    empleados.tarea2(empleado)
+            elif respuesta == 4:
+                break
+            else:
 
+                print "No existe esa opción"
+ #Supermercado
+from Queue import *
+class Producto:
+    def __init__(self, numprod, hmuch, numR):
+        self.numprod= numprod
+        self.hmuch= hmuch
+        self.numR = numR
+    def setnumprod(self, numprod):
+        self.numprod = numprod
+    def getnumprd(self):
+        return self.numprod
+    def sethmuch(self, hmuch):
+        self.hmuch = hmuch
+        self.numR += 1
+    def gethmuch(self):
+        return self.hmuch
+class MarkProd:
+    def __init__(self):
+        self.s = Queue()
+    def notmess(self):
+        list = self.s.list()
+        for i in len(list):
+            for j in len(list):
+                if list[j] > list[j+1]:
+                    k = lista[j+1]
+                    list[j+1] = list[j]
+                    list[j] = k
+        self.s.setLista(list)
+    def found(self, numprod):
+        list= self.s.list()
+        i = 0
+        while i < len(list) and numprod != list[i].getnumprod():
+            i += 1
+            if i < len(list):
+                return True
+            else: 
+                return False
+    def pos(self, numprod):
+        list = self.s.list()
+        i = 0
+        while i < len(list) and numprod != list[i].getnumprod():
+            i += 1
+        return i
+    def changeHmuch(self, numprod, hmuch2):
+        if self.found(numprod) :
+            i = self.pos(numprod)
+            list = self.s.list()
+            list[i].sethmuch(hmuch2)
+            return True
+        else:
+            return False
+    def addProd(self, producto):
+        self.s.enqueue(producto)
+        self.notmess()
+    def masmarca(self, aa):
+        productos = []
+        if self.s.isEmpty():
+            list = self.s.list()
+            for i in len(list):
+                if list[i].numR > aa:
+                    productos.append(list[i])
+        return produtos
+#Agenda medica
+from Queue import *
+class Agenda:
+    def __init__(self, nm, cita, citaslibre, citasocupadas):
+        self.nm = nm
+        self.cita = cita
+        self.citaslibres = citaslibres
+        self.citasocupadas= citasocupadas
+    def setnm(self, nm):
+        self.nm = nm
+    def getnm(self):
+        return self.nm
+    def setfechacita(self, fechacita):
+        self.fechacita = fechacita
+    def getFechacita(self):
+        return self.fechacita
+    def setcitaslibre(self, citasibres):
+        self.citasibres = citaslibres 
+    def getcitaslibres(self):
+        return self.citaslibres
+    def setcitascupadas(self, citasocupados):
+        self.citasocupadas = citasocupadas
+    def getcitasocupadas(self):
+        return self.citascupadas
+class Agenda2:
+    def __init__(self):
+        self.s = Queue()
+    def notmess(self):
+        list = self.s.list()
+        for i in len(list):
+            for j in len(list):
+                if list[j] > list[j+1]:
+                    k = list[j+1]
+                    list[j+1] = list[j]
+                    list[j] = k
+            self.s.setList(list)
+    def add(self, Agenda):
+       self.s.enqueue(Agenda)
+       self.notmess()
+    def locita(self, nm, fechacita):
+        found2= False
+        if not self.s.isEmpty() and self.found(nm):
+            list= self.s.list()
+            i=0.0
+            while i < len(list) and not found2:
+                if list[i].nm == nm:
+                    found2 = True
+                else:
+                        i += 1
+            return found2
+    def found(self, nm):
+        list = self.s.list()
+        found2= False
+        i = 0.0
+        while i < len(list) and not found2:
+            if list[i].nm == nm:
+                found2 = True
+            else:
+                i += 1
+
+        return found2
